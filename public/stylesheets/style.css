@@ -77,3 +77,23 @@ article a:hover
 {
     font-size: 14px;
 }
+
+.edit
+{
+    font-size: 13px;
+
+    margin: 3px;
+    padding: 2px 5px;
+
+    color: #333;
+    border-radius: 3px;
+    background-color: #f3f3f3;
+}
+.edit:hover
+{
+    -webkit-transition: color .2s linear;
+    text-decoration: none;
+
+    color: #fff;
+    background-color: #f00;
+}
