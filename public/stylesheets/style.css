@@ -19,13 +19,17 @@ p
 
     margin: 1em 0;
 }
+
+h2
+{
+    color:green;
+}
+
 header
 {
     padding: .5em 0;
-
     text-align: center;
-
-    color: blue;
+    color: gray;
     border-bottom: 1px solid #ccc;
 }
 nav
@@ -78,10 +82,61 @@ article a
 }
 article a:hover
 {
-    text-decoration: underline;
+    text-decoration: none;
 
     color: #333;
 }
+
+.adminBtn
+{
+    display: inline-block;
+    float: right;
+}
+
+
+.adminPosts
+{
+    margin:20px;
+}
+
+
+.admin
+{
+    position: relative;
+    border-radius: 4px;
+    margin:5px;
+    padding:3px;
+    display: inline-block;
+    font-size: 12px;
+    text-decoration: none;
+    color: white;
+    background-color: green;
+}
+
+.admin:hover
+{
+    background-color: white;
+    color:green;
+}
+
+.admin_delete
+{
+    font-size: 12px;
+    background-color: gray;
+    border-radius: 5px;
+    padding:2px;
+    color:white;
+    margin:0px 20px 20px 20px;
+    text-decoration: none;
+}
+
+.admin_delete:hover
+{
+    background-color: red;
+    color:white;
+    text-decoration: none;
+}
+
 .info
 {
     font-size: 14px;
@@ -195,4 +250,33 @@ article a:hover
     text-align: center;
 
     border: 0;
+}
+
+.l_head
+{
+    float: left;
+
+    margin-left: -4em;
+
+    box-shadow: 0 1px 4px #888;
+}
+.r_head
+{
+    float: right;
+
+    margin-top: -2.5em;
+
+    box-shadow: 0 1px 4px #888;
+}
+
+.alluser
+{
+    color: gray;
+    font-size: 15px;
+    margin:20px;
+}
+
+.alluser strong
+{
+    color:black;
 }

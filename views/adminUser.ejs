@@ -1,0 +1,14 @@
+<%- include adminHeader %>
+<% if(users.length != 0) { %>
+  <h2>用户列表：</h2>
+  <% users.forEach(function (user, index) { %>
+    <p class="alluser">
+    <strong>用户名</strong>：<a href="/u/<%= user.name %>"><%= user.name %></a><br/>
+    <strong>邮箱：</strong>: <%= user.email %>
+    </p>
+    <% if(admin) { %>
+      <a class="admin_delete" href="/a/remove/<%= user.name %>">删除</a>
+    <% } %>
+  <% }) %>
+<% } %>
+<%- include footer %>

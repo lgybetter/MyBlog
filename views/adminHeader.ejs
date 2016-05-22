@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Blog</title>
+<link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+
+<header>
+<h1><%= title %></h1>
+</header>
+
+<div class="adminBtn">
+	<span><a class="admin" title="管理员主页" href="/">主页</a></span>
+
+	<% if(admin) { %>
+	<span><a class="admin" title="退出管理员登陆" href="/adminLogout">退出管理员登陆</a></span>
+	<% } %>
+</div>
+
+
+<nav>
+<% if (admin) { %>
+  <span><a title="查看文章" href="/admin">查看文章</a></span>
+  <span><a title="查看用户" href="/admin/Users">查看用户</a></span>
+  <span><a title="管理员注册" href="/admin/reg">新增管理员</a></span>
+<% } else { %>
+  <span><a title="管理员登陆" href="/admin/login">管理员登陆</a></span>
+<% } %>
+</nav>
+
+<% if (success) { %>
+  <div><%= success %></div>
+<% } %>
+<% if (error) { %>
+  <div><%= error %> </div>
+<% } %>
+
+<article>
