@@ -2,8 +2,10 @@
 <html>
 <head>
 <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <title>Blog</title>
-<link rel="stylesheet" href="/stylesheets/style.css">
+<link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+
 </head>
 <body>
 
@@ -11,11 +13,11 @@
 <h1><%= title %></h1>
 </header>
 
-<div class="adminBtn">
-	<span><a class="admin" title="管理员主页" href="/">主页</a></span>
+<div>
+	<span><a  title="管理员主页" href="/">主页</a></span>
 
 	<% if(admin) { %>
-	<span><a class="admin" title="退出管理员登陆" href="/adminLogout">退出管理员登陆</a></span>
+	<span><a  title="退出管理员登陆" href="/adminLogout">退出管理员登陆</a></span>
 	<% } %>
 </div>
 

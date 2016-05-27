@@ -1,10 +1,10 @@
 <br />
-<div>
+<div class="col-md-12">
   <% if (!isFirstPage) { %>
-    <span class="prepage"><a title="上一页" href="?p=<%= page-1 %>">上一页</a></span>
+    <a class="btn btn-primary btn-sm col-md-6 text-left" title="上一页" href="?p=<%= page-1 %>">上一页</a></span>
   <% } %>
 
   <% if (!isLastPage) { %>
-    <span class="nextpage"><a title="下一页" href="?p=<%= page+1 %>">下一页</a></span>
+    <a class="btn btn-primary btn-sm col-md-6 text-right" title="下一页" href="?p=<%= page+1 %>">下一页</a></span>
   <% } %>
 </div>

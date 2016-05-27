@@ -1,22 +1,57 @@
 <br />
 <% post.comments.forEach(function (comment, index) { %>
-  <div style="padding-left:4em">
-    <p><img src="<%= comment.head %>" class="l_head" /><a href="<%= comment.website %>"><%= comment.name %></a>
-    <span class="info"> 回复于 <%= comment.time %></span></p>
+  <div class="col-md-12">
+    <p>
+      <img src="<%= comment.head %>"  />
+      <a href="<%= comment.website %>"><%= comment.name %></a>
+      <span> 回复于 <%= comment.time %></span>
+    </p>
     <p><%- comment.content %></p>
-  </div>
+  </div> 
 <% }) %>
 
-<form method="post">
-<% if (user) { %>
-  姓名：<input type="text" name="name" value="<%= user.name %>" /><br />
-  邮箱：<input type="text" name="email" value="<%= user.email %>" /><br />
-  网址：<input type="text" name="website" value="/u/<%= user.name %>" /><br />
-<% } else { %>
-  姓名：<input type="text" name="name" /><br />
-  邮箱：<input type="text" name="email" /><br />
-  网址：<input type="text" name="website" value="http://" /><br />
-<% } %>
-  <textarea name="content" rows="5" cols="80"></textarea><br />
-  <input type="submit" value="留言" />
-</form>
+<div class="col-md-12">
+  <form method="post" class="form-horizontal">
+  <% if (user) { %>
+    <div class="form-group">
+      <label class="col-sm-1 control-label text-center">姓名：</label>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" name="name" value="<%= user.name %>" />
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-1 control-label text-center">邮箱：</label>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" name="email" value="<%= user.email %>" />
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-1 control-label text-center">网址：</label>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" name="website" value="/u/<%= user.name %>" />
+      </div>
+    </div>
+  <% } else { %>
+    <div class="form-group">
+      <label class="col-sm-1 control-label text-center">姓名：</label>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" name="name"/>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-1 control-label text-center">邮箱：</label>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" name="email"/>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-1 control-label text-center">网址：</label>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" name="website" value="http://"/>
+      </div>
+    </div>
+  <% } %>
+    <textarea class="form-control col-sd-1" rows="5" name="content"></textarea>
+    <button class="btn btn-default" type="submit">留言</button>
+  </form>
+</div>
