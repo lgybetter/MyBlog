@@ -18,7 +18,7 @@
     <% if (flag) { %>
       <a class="btn btn-primary btn-sm" href="/reprint/<%= post.name %>/<%= post.time.day %>/<%= post.title %>">转载</a>
   <% } %>
-  <p class="col-md-12 col-md-offset-1">
+  <p class="col-md-12">
     <label>作者：</label><a href="/u/<%= post.name %>"><%= post.name %></a> | 
     <label>日期：</label><%= post.time.minute %> | 
     <label>标签：</label>
@@ -32,8 +32,8 @@
     <br><a href="/u/<%= post.reprint_info.reprint_from.name %>/<%= post.reprint_info.reprint_from.day %>/<%= post.reprint_info.reprint_from.title %>">原文链接</a>
   <% } %>
   <h2 class="col-md-12 text-center "><a href="/p/<%= post._id %>"><%= post.title %></a></h2>
-  <div class="lead col-md-10 col-md-offset-1 text-left"><%- post.post %></div>
-  <p class="col-md-12 col-md-offset-1">
+  <div class="lead col-md-10 text-left"><%- post.post %></div>
+  <p class="col-md-12 ">
     <label>阅读：</label><%= post.pv %> | 
     <label>评论：</label><%= post.comments.length %> | 
     <label>转载：</label>
@@ -44,14 +44,11 @@
     <% } %>
   </p>
   <% if (user && (user.name == post.name)) { %>
-    <div class="row">
-      <div class="col-md-12 col-md-offset-1">
-        <a class="btn btn-primary btn-sm" href="/edit/<%= post.name %>/<%= post.time.day %>/<%= post.title %>">编辑</a>
-        <a class="btn btn-primary btn-sm" href="/remove/<%= post.name %>/<%= post.time.day %>/<%= post.title %>">删除</a>
-      </div>
+    <div class="col-md-12">
+      <a class="btn btn-primary btn-sm" href="/edit/<%= post.name %>/<%= post.time.day %>/<%= post.title %>">编辑</a>
+      <a class="btn btn-primary btn-sm" href="/remove/<%= post.name %>/<%= post.time.day %>/<%= post.title %>">删除</a>
     </div>
   <% } %>
-
   <%- include comment %>
 </div>
 <%- include footer %>
