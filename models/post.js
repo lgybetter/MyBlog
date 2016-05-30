@@ -180,7 +180,7 @@ Post.getOne = function(_id,callback) {
   });
 };
 
-Post.edit = function(name, day, title, callback) {
+Post.edit = function(_id, callback) {
   //打开数据库
   mongodb.open(function(err,db) {
     if(err) {
@@ -194,9 +194,7 @@ Post.edit = function(name, day, title, callback) {
       }
       //根据用户名，发表日期及文章名进行查询
       collection.findOne({
-        "name": name,
-        "time.day": day,
-        "title": title
+        "_id":new ObjectID(_id)
       },function(err,doc) {
         mongodb.close();
         if(err) {
@@ -209,7 +207,7 @@ Post.edit = function(name, day, title, callback) {
 };
 
 
-Post.update = function(name,day,title,post,callback) {
+Post.update = function(_id,post,callback) {
   mongodb.open(function(err,db) {
     if(err) {
       return callback(err);
@@ -222,9 +220,7 @@ Post.update = function(name,day,title,post,callback) {
       }
 
       collection.update({
-        "name": name,
-        "time.day": day,
-        "title": title
+        "_id":new ObjectID(_id)
       }, {
         $set: {post: post}
       },function(err) {
@@ -268,7 +264,7 @@ Post.update = function(name,day,title,post,callback) {
 // };
 
 //删除一篇文章
-Post.remove = function(name, day, title, callback) {
+Post.remove = function(_id, name, day, title, callback) {
   //打开数据库
   mongodb.open(function (err, db) {
     if (err) {
@@ -282,9 +278,7 @@ Post.remove = function(name, day, title, callback) {
       }
       //查询要删除的文档
       collection.findOne({
-        "name": name,
-        "time.day": day,
-        "title": title
+        "_id":new ObjectID(_id),
       }, function (err, doc) {
         if (err) {
           mongodb.close();
@@ -318,9 +312,7 @@ Post.remove = function(name, day, title, callback) {
 
         //删除转载来的文章所在的文档
         collection.remove({
-          "name": name,
-          "time.day": day,
-          "title": title
+          "_id":new ObjectID(_id)
         }, {
           w: 1
         }, function (err) {

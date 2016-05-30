@@ -24,7 +24,7 @@
   </div>
 
   <% if (post.reprint_info.reprint_from) { %>
-    <br><a href="/u/<%= post.reprint_info.reprint_from.name %>/<%= post.reprint_info.reprint_from.day %>/<%= post.reprint_info.reprint_from.title %>">原文链接</a>
+    <br><a class="btn btn-default" href="/u/<%= post.reprint_info.reprint_from.name %>/<%= post.reprint_info.reprint_from.day %>/<%= post.reprint_info.reprint_from.title %>">原文链接</a>
   <% } %>
 <% }) %>
 <%- include paging %>

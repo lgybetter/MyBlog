@@ -11,9 +11,9 @@
 	<header class="main-header">
 		<div class="container-fluid">
 			<div class="row">
-				<a title="返回主页" class="top-btn col-md-1 col-md-offset-10 btn btn-primary btn-sm " role="button" href="/">主页</a>
+				<a title="返回主页" class="top-btn col-md-1 col-md-offset-10 col-sm-2 col-sm-offset-9 col-xs-4 col-xs-offset-7 btn btn-primary btn-sm " role="button" href="/">主页</a>
 				<% if(admin) { %>
-				<a title="退出管理员登陆" class="top-btn col-md-1 col-md-offset-10 btn btn-primary btn-sm " role="button" href="/adminLogout">退出管理员登陆</a>	
+				<a title="退出管理员登陆" class="top-btn col-md-1 col-md-offset-10 col-sm-2 col-sm-offset-9 col-xs-4 col-xs-offset-7 btn btn-primary btn-sm " role="button" href="/adminLogout">退出管理员登陆</a>	
 				<% } %>
 			</div>
 
@@ -27,16 +27,18 @@
 		<div class="row">
 			<nav class="navbar navbar-default">
 				<div class="container-fluid">
-					<div class="collapse navbar-collapse">
-						<ul class="nav navbar-nav col-md-6">
-							<% if (admin) { %>
-								<li class="col-md-offset-3"><a title="查看文章" href="/admin">查看文章</a></li>
-								<li><a title="查看用户" href="/admin/Users">查看用户</a></li>
-								<li><a title="管理员注册" href="/admin/reg">管理员注册</a></li>
-							<% } else { %>	
-								<li class="col-md-offset-3"><a title="管理员登陆" href="/admin/login">管理员登陆</a></li>
-							<% } %>
-						</ul>						
+					<div class="navbar-collapse">
+						<div class="col-md-12 col-md-offset-1 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-1">
+							<ul class="nav navbar-pills">
+								<% if (admin) { %>
+									<li class="col-md-2 text-center col-sm-3 col-xs-8 col-xs-offset-1"><a title="查看文章" href="/admin">查看文章</a></li>
+									<li class="col-md-2 text-center col-sm-3 col-xs-8 col-xs-offset-1"><a title="查看用户" href="/admin/Users">查看用户</a></li>
+									<li class="col-md-2 text-center col-sm-3 col-xs-8 col-xs-offset-1"><a title="管理员注册" href="/admin/reg">管理员注册</a></li>
+								<% } else { %>	
+									<li><a class="col-md-offset-4 col-md-2 text-center col-sm-offset-4 col-sm-3 col-xs-8 col-xs-offset-1" title="管理员登陆" href="/admin/login">管理员登陆</a></li>
+								<% } %>
+							</ul>		
+						</div>				
 					</div>
 				</div>
 			</nav>
@@ -46,4 +48,4 @@
 			<% if (error) { %>
 			  <div class="alert alert-warning text-center" role="alert"><%= error %> </div>
 			<% } %>
-			<article class="container col-md-offset-1">
+			<article class="container col-lg-offset-2 col-md-offset-2">
