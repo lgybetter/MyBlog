@@ -244,7 +244,7 @@ module.exports = function(app) {
     });
   });
 
-  app.post('/u/:name/:day/:title',function(req,res) {
+  app.post('/p/:_id',function(req,res) {
     var date = new Date(),
     time = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + " " + date.getHours() + ":" + (date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes());
     var md5 = crypto.createHash('md5'),email_MD5 = md5.update(req.body.email.toLowerCase()).digest('hex'),
@@ -257,7 +257,7 @@ module.exports = function(app) {
       time: time,
       content: req.body.content
     };
-    var newComment = new Comment(req.params.name,req.params.day,req.params.title,comment);
+    var newComment = new Comment(req.params._id,comment);
     newComment.save(function(err) {
       if(err) {
         req.flash('error',err);
