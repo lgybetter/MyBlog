@@ -442,7 +442,7 @@ module.exports = function(app) {
     });
   });
 
-  app.get('/admin/reg',checkAdminLogin);
+  //app.get('/admin/reg',checkAdminLogin);
   app.get('/admin/reg', function (req, res) {
     res.render('adminReg', { 
       title: '管理员注册',
@@ -452,7 +452,7 @@ module.exports = function(app) {
     });
   });
 
-  app.post('/admin/reg', checkAdminLogin);
+  //app.post('/admin/reg', checkAdminLogin);
   app.post('/admin/reg', function (req, res) {
     var name = req.body.name, password = req.body.password,password_re = req.body['password-repeat'];
     //检验管理员两次输入的密码是否一致
