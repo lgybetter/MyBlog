@@ -5,6 +5,16 @@ body
     background-image: url();
 }
 
+.of-hd 
+{
+    overflow: hidden;
+}
+
+.input-line-height
+{
+    margin-bottom: 10px;
+}
+
 .top-btn 
 {
     margin-top: 4px;
