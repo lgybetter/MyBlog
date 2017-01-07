@@ -2,7 +2,7 @@
 <% posts.forEach(function (post, index) { %>
   <div class="row">
     <h2 class="col-md-8"><a href="/p/<%= post._id %>"><%= post.title %></a></h2>
-    <a class="col-md-4" href="/u/<%= post.name %>"><img src="<%= post.head %>"/></a>
+    <a class="col-md-4" href="/u/<%= post.name %>"><img class="image-right" src="<%= post.head %>"/></a>
     <p class="col-md-12">
       <label>作者：</label><a href="/u/<%= post.name %>"><%= post.name %></a> | 
       <label>日期：</label><%= post.time.minute %> | 

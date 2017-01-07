@@ -5,6 +5,16 @@ body
     background-image: url();
 }
 
+.center-auto
+{
+    margin: 0 auto;
+}
+
+.image-right
+{
+    text-align: right
+}
+
 .of-hd 
 {
     overflow: hidden;
